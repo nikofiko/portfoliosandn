@@ -39,7 +39,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="hero-desc">
-          <strong>Profesjonalnie, szybko i w cenie od 500 PLN.</strong> Bez agencji, bez
+          <strong>Profesjonalnie, szybko i w cenie od 800 PLN.</strong> Bez agencji, bez
           pośredników — tylko my i Twój projekt.
         </p>
         <div className="hero-actions">

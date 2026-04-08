@@ -9,7 +9,12 @@
       "WebFetch(domain:landonorris.com)",
       "WebFetch(domain:www.igloo.inc)",
       "WebFetch(domain:www.chungiyoo.com)",
-      "Bash(timeout 6 bash -c 'while ! curl -s http://localhost:3002 > /dev/null 2>&1; do sleep 1; done; echo \"Server ready\"')"
+      "Bash(timeout 6 bash -c 'while ! curl -s http://localhost:3002 > /dev/null 2>&1; do sleep 1; done; echo \"Server ready\"')",
+      "Bash(npx tsc:*)",
+      "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.41.16.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/bella-menu.png)",
+      "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.41.31.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/bella-galeria.png)",
+      "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.48.09.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/gabinet-hero.png)",
+      "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.48.39.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/gabinet-oferta.png)"
     ]
   }
 }

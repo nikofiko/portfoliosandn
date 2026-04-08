@@ -52,7 +52,7 @@ export default function Pricing() {
         <div className="pricing-left">
           <div className="tag">Pakiet startowy</div>
           <div className="pricing-price">
-            <Counter target={500} />
+            <Counter target={800} />
             <small> PLN</small>
           </div>
           <div className="pricing-compare">
@@ -73,7 +73,7 @@ export default function Pricing() {
             Zamów stronę <span className="btn-arrow">→</span>
           </MagneticButton>
           <p className="pricing-payment">
-            250 zł na start · 250 zł po oddaniu strony
+            400 zł na start · 400 zł po oddaniu strony
           </p>
         </div>
       </RevealOnScroll>

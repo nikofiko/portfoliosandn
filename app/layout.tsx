@@ -20,7 +20,7 @@ const libre = Libre_Baskerville({
 export const metadata: Metadata = {
   title: "S&N Studio — Web Development",
   description:
-    "Budujemy strony dla lokalnych firm. Profesjonalnie, szybko i w cenie od 500 PLN.",
+    "Budujemy strony dla lokalnych firm. Profesjonalnie, szybko i w cenie od 800 PLN.",
 };
 
 export default function RootLayout({
