@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(timeout 25 npx next dev)",
+      "Read(//tmp/**)",
+      "Bash(npx next:*)",
+      "WebFetch(domain:www.awwwards.com)",
+      "WebFetch(domain:landonorris.com)",
+      "WebFetch(domain:www.igloo.inc)",
+      "WebFetch(domain:www.chungiyoo.com)",
+      "Bash(timeout 6 bash -c 'while ! curl -s http://localhost:3002 > /dev/null 2>&1; do sleep 1; done; echo \"Server ready\"')"
+    ]
+  }
+}
