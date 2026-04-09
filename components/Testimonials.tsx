@@ -30,7 +30,7 @@ const testimonials = [
     date: "6 tygodni temu",
   },
   {
-    text: "Wcześniej płaciłem agencji 5000 zł i czekałem 3 miesiące. Tutaj za 800 zł dostałem lepszą stronę w dwa tygodnie. Polecam każdej firmie.",
+    text: "Wcześniej płaciłem agencji 5000 zł i czekałem 3 miesiące. Tutaj za 750 zł dostałem lepszą stronę w dwa tygodnie. Polecam każdej firmie.",
     author: "Piotr Zając",
     role: "Kamex Remonty, Gdańsk",
     color: "#67E8F9",

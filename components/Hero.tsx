@@ -39,7 +39,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="hero-desc">
-          <strong>Profesjonalnie, szybko i w cenie od 800 PLN.</strong> Bez agencji, bez
+          <strong>Profesjonalnie, szybko i w cenie od 750 PLN.</strong> Bez agencji, bez
           pośredników — tylko my i Twój projekt.
         </p>
         <div className="hero-actions">
@@ -79,7 +79,7 @@ export default function Hero() {
           </div>
           <div className="hero-tile" onMouseMove={onTileMove}>
             <div className="hero-tile-num">
-              <Counter target={500} />
+              <Counter target={750} />
             </div>
             <div className="hero-tile-label">PLN od</div>
           </div>

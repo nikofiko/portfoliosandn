@@ -37,18 +37,18 @@ export default function Contact() {
             Opisz krótko czego potrzebujesz, a odezwiemy się w ciągu 24 godzin z
             bezpłatną wyceną. Bez zobowiązań.
           </p>
-          <a href="https://wa.me/48000000000" className="contact-option">
+          <a href="https://wa.me/48731531571" className="contact-option">
             <div className="co-icon wa">💬</div>
             <div>
-              <div className="co-label">WhatsApp</div>
-              <div className="co-value">+48 000 000 000</div>
+              <div className="co-label">WhatsApp / Telefon</div>
+              <div className="co-value">+48 731 531 571</div>
             </div>
           </a>
-          <a href="mailto:hej@snstudio.pl" className="contact-option">
+          <a href="mailto:nikodem@sandnstudio.art" className="contact-option">
             <div className="co-icon em">✉️</div>
             <div>
               <div className="co-label">E-mail</div>
-              <div className="co-value">hej@snstudio.pl</div>
+              <div className="co-value">nikodem@sandnstudio.art</div>
             </div>
           </a>
         </RevealOnScroll>

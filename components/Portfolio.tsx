@@ -1,6 +1,6 @@
 "use client";
 
-import { MouseEvent, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import RevealOnScroll from "./ui/RevealOnScroll";
 
 type Project = {
@@ -267,26 +267,10 @@ function PItem({ p }: { p: Project }) {
     return () => io.disconnect();
   }, []);
 
-  const onMove = (e: MouseEvent<HTMLDivElement>) => {
-    const r = e.currentTarget.getBoundingClientRect();
-    const img = e.currentTarget.querySelector<HTMLDivElement>(".p-item-img");
-    if (!img) return;
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    img.style.transform = `perspective(600px) rotateY(${x * 14}deg) rotateX(${-y * 12}deg) scale(1.04)`;
-  };
-
-  const onLeave = (e: MouseEvent<HTMLDivElement>) => {
-    const img = e.currentTarget.querySelector<HTMLDivElement>(".p-item-img");
-    if (img) img.style.transform = "perspective(600px) rotateY(0) rotateX(0) scale(1)";
-  };
-
   return (
     <div
       ref={ref}
       className={`p-item reveal rd${p.delay}${visible ? " visible" : ""}`}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
     >
       <div className="p-item-inner">
         <div className="p-item-img" style={{ background: p.imgBg }}>
