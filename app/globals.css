@@ -5,7 +5,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --bg:#F8F7F4;--fg:#111;--accent:#FF4D00;--accent-light:#FF6A33;
-  --accent-glow:rgba(255,77,0,.12);--muted:#888;--muted-light:#aaa;
+  --accent-glow:rgba(255,77,0,.12);--muted:#e6e6e6;--muted-light:#aaa;
   --card:#fff;--border:#ddd;--dark:#0C0C0F;--dark2:#151518;
   --serif:var(--font-libre),Georgia,serif;
   --sans:var(--font-sora),system-ui,sans-serif;
@@ -92,7 +92,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;displ
 .btn-magnetic:hover::before{opacity:1}
 .btn-magnetic:hover{box-shadow:0 10px 40px rgba(255,77,0,.3),0 0 80px rgba(255,77,0,.1)}
 .btn-arrow{transition:transform .25s}.btn-magnetic:hover .btn-arrow{transform:translateX(4px)}
-.btn-outline{position:relative;padding:1rem 2.5rem;background:transparent;color:var(--fg);border:2px solid var(--border);border-radius:10px;font-size:.95rem;font-weight:500;cursor:pointer;text-decoration:none;font-family:var(--sans);transition:all .3s;display:inline-block}
+.btn-outline{position:relative;padding:1rem 2.5rem;background:transparent;color:#fff;border:2px solid var(--border);border-radius:10px;font-size:.95rem;font-weight:500;cursor:pointer;text-decoration:none;font-family:var(--sans);transition:all .3s;display:inline-block}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
 
 /* SOCIAL PROOF AVATARS */
@@ -468,19 +468,19 @@ section{padding:8rem 3rem;position:relative;z-index:1}
 .contact-section .big-title em{color:var(--cyan)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:4rem;align-items:start}
 .contact-info .big-title{margin-bottom:1rem}
-.contact-desc{color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:2rem}
+.contact-desc{color:fff);font-size:.95rem;line-height:1.7;margin-bottom:2rem}
 .contact-option{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem;border-radius:12px;border:1px solid var(--border);background:var(--card);text-decoration:none;color:var(--fg);transition:border-color .2s,transform .2s,box-shadow .2s;margin-bottom:.8rem}
 .contact-option:hover{border-color:var(--cyan);transform:translateX(4px);box-shadow:0 4px 16px var(--cyan-glow)}
 .co-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
 .co-icon.wa{background:rgba(37,211,102,.1)}.co-icon.em{background:var(--accent-glow)}
 .co-label{font-size:.65rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
 .co-value{font-size:.9rem;font-weight:600;margin-top:1px}
-.contact-form-wrap{background:rgba(255,255,255,.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(8,145,178,.1);border-radius:20px;padding:2.5rem;transition:border-color .3s,box-shadow .3s}
+.contact-form-wrap{background:rgba(255,255,255,1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(8,145,178,.1);border-radius:20px;padding:2.5rem;transition:border-color .3s,box-shadow .3s}
 .contact-form-wrap:hover{border-color:rgba(8,145,178,.2);box-shadow:0 20px 50px rgba(8,145,178,.06)}
 .cf-title{font-size:1rem;font-weight:700;margin-bottom:1.5rem}
 .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
 .cf-group{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
-.cf-label{font-size:.72rem;font-weight:600;color:var(--muted)}
+.cf-label{font-size:.72rem;font-weight:600;color:#111;}
 .cf-input,.cf-textarea{width:100%;padding:.8rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:.88rem;color:var(--fg);outline:none;transition:border-color .2s,box-shadow .2s;resize:none}
 .cf-input:focus,.cf-textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px var(--cyan-glow)}
 .cf-textarea{min-height:110px}
@@ -524,3 +524,48 @@ footer a:hover{color:var(--violet-light)}
   .t-item{min-width:100%}
   .hero-social{flex-direction:column;align-items:flex-start;gap:.5rem}
 }
+
+/* ═══ 3D CANVAS — SECTION TRANSPARENCY ═══
+   Override section backgrounds with semi-transparent equivalents so the
+   fixed WebGL canvas (z-index:0) is visible through each section as the
+   user scrolls.  Opacity ~0.72 keeps text fully readable while letting
+   the blob / particle effects bleed through. */
+
+.services-section  { background: rgba(248,247,244,.40); }
+
+.portfolio-section { background: linear-gradient(
+  180deg,
+  rgba(240,253,244,.40) 0%,
+  rgba(236,253,245,.40) 40%,
+  rgba(255,255,255,.40) 100%
+); }
+
+#pricing { background: linear-gradient(
+  180deg,
+  rgba(248,247,244,.40) 0%,
+  rgba(255,251,235,.40) 50%,
+  rgba(248,247,244,.40) 100%
+); }
+
+.about-section { background: linear-gradient(
+  180deg,
+  rgba(248,247,244,.40),
+  rgba(255,245,247,.40),
+  rgba(248,247,244,.40)
+); }
+
+.contact-section { background: linear-gradient(
+  180deg,
+  rgba(248,247,244,.40),
+  rgba(236,254,255,.40),
+  rgba(240,253,250,.40),
+  rgba(248,247,244,.40)
+); }
+
+/* Testimonials — already deep-purple dark, let canvas particles glow through */
+.testi-section { background: linear-gradient(
+  135deg,
+  rgba(26,5,51,.78)   0%,
+  rgba(15,10,30,.78)  40%,
+  rgba(10,6,18,.78)   100%
+); }

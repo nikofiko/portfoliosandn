@@ -14,7 +14,8 @@
       "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.41.16.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/bella-menu.png)",
       "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.41.31.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/bella-galeria.png)",
       "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.48.09.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/gabinet-hero.png)",
-      "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.48.39.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/gabinet-oferta.png)"
+      "Bash(cp \"/Users/szymonlaskowski/Documents/zrzuty/Zrzut ekranu 2026-04-8 o 19.48.39.png\" /Users/szymonlaskowski/Documents/coding/portfoliosandn/public/projects/gabinet-oferta.png)",
+      "Bash(npm run:*)"
     ]
   }
 }

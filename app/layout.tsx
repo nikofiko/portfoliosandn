@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Sora, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
+import SmoothScroll from "@/components/SmoothScroll";
+
+// SSR disabled — Three.js and browser APIs are client-only
+const SceneCanvas = dynamic(() => import("@/components/SceneCanvas"), {
+  ssr: false,
+});
 
 const sora = Sora({
   subsets: ["latin", "latin-ext"],
@@ -30,7 +37,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl" className={`${sora.variable} ${libre.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>
+          {/* Fixed WebGL canvas — z:0, behind all page content */}
+          <SceneCanvas />
+          {/* Content layer — z:1, creates stacking context above canvas */}
+          <div style={{ position: "relative", zIndex: 1 }}>
+            {children}
+          </div>
+        </SmoothScroll>
+      </body>
     </html>
   );
 }
