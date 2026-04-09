@@ -1,6 +1,7 @@
 "use client";
 
 import { MouseEvent, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import RevealOnScroll from "./ui/RevealOnScroll";
 
 export default function About() {
@@ -83,9 +84,17 @@ export default function About() {
         >
           <div className="about-card-offset" />
           <div className="about-card" ref={cardRef}>
-            <div className="about-card-avatar">Zdjęcie</div>
-            <div className="about-card-name">S&amp;N Studio</div>
-            <div className="about-card-role">Web Development</div>
+            <div className="about-card-avatar">
+              <Image
+                src="/team.png"
+                alt="Szymon i Nikodem — S&N Studio"
+                width={320}
+                height={320}
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+              />
+            </div>
+            <div className="about-card-name">Szymon &amp; Nikodem</div>
+            <div className="about-card-role">Web Development Studio</div>
           </div>
         </div>
       </RevealOnScroll>
