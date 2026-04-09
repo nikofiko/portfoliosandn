@@ -423,7 +423,7 @@ section{padding:8rem 3rem;position:relative;z-index:1}
 .testi-section .tag{color:var(--violet-light)}.testi-section .tag::before{border-color:var(--violet-light)}
 .testi-section .big-title{color:#fff}
 .testi-section .big-title em{color:var(--violet-light)}
-.testi-wrap{position:relative;margin-top:4rem;z-index:2;overflow:hidden}
+.testi-wrap{position:relative;margin-top:4rem;z-index:2;overflow-x:clip;overflow-y:visible}
 .testi-track{display:flex;gap:1.5rem;transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .t-item{--t-color:#A78BFA;min-width:calc(33.333% - 1rem);padding:2.5rem;border:1px solid rgba(167,139,250,.12);border-radius:0;background:rgba(255,255,255,.03);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);position:relative;overflow:hidden;transition:all .5s cubic-bezier(.22,1,.36,1);flex-shrink:0;transform-style:preserve-3d;perspective:600px}
 .t-item:hover{border-color:rgba(167,139,250,.35);background:rgba(255,255,255,.06);transform:translateY(-10px) rotateX(2deg)}
