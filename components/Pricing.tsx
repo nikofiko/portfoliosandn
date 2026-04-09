@@ -93,7 +93,7 @@ export default function Pricing() {
           <RevealOnScroll
             key={plan.name}
             className={`p-card${plan.popular ? " p-card--popular" : ""}`}
-            delay={(i % 4) + 1}
+            delay={((i % 4) + 1) as 1 | 2 | 3 | 4 | 5}
           >
             <div className="p-card-top">
               <span className="p-card-tag">{plan.tag}</span>
