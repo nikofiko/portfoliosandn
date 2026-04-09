@@ -565,6 +565,8 @@ footer a:hover{color:var(--violet-light)}
   .about-card{padding:1.8rem}
   .testi-agg{flex-wrap:wrap;gap:1rem;width:100%;padding:1rem 1.2rem}
   .testi-agg-sep{display:none}
+  .slider-nav{margin-top:1.5rem;justify-content:center}
+  .slider-dots{position:absolute;right:0}
   .btn-magnetic,.btn-outline{padding:.85rem 1.8rem;font-size:.9rem}
   footer{padding:2rem 1.2rem}
 }
