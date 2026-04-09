@@ -1,10 +1,19 @@
 "use client";
 
-import { MouseEvent, useRef } from "react";
+import { FormEvent, MouseEvent, useRef, useState } from "react";
 import RevealOnScroll from "./ui/RevealOnScroll";
 
 export default function Contact() {
   const btnRef = useRef<HTMLButtonElement | null>(null);
+  const [form, setForm] = useState({
+    name: "",
+    company: "",
+    contact: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle"
+  );
 
   const onMove = (e: MouseEvent<HTMLButtonElement>) => {
     const el = btnRef.current;
@@ -19,6 +28,26 @@ export default function Contact() {
 
   const onLeave = () => {
     if (btnRef.current) btnRef.current.style.transform = "translate(0,0)";
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setStatus("sent");
+      setForm({ name: "", company: "", contact: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -54,15 +83,32 @@ export default function Contact() {
         </RevealOnScroll>
         <RevealOnScroll className="contact-form-wrap" delay={3}>
           <div className="cf-title">Wyślij wiadomość</div>
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={handleSubmit}>
             <div className="cf-row">
               <div className="cf-group">
                 <label className="cf-label">Imię i nazwisko</label>
-                <input type="text" className="cf-input" placeholder="Jan Kowalski" />
+                <input
+                  type="text"
+                  className="cf-input"
+                  placeholder="Jan Kowalski"
+                  required
+                  value={form.name}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, name: e.target.value }))
+                  }
+                />
               </div>
               <div className="cf-group">
                 <label className="cf-label">Firma</label>
-                <input type="text" className="cf-input" placeholder="Nazwa firmy" />
+                <input
+                  type="text"
+                  className="cf-input"
+                  placeholder="Nazwa firmy"
+                  value={form.company}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, company: e.target.value }))
+                  }
+                />
               </div>
             </div>
             <div className="cf-group">
@@ -71,6 +117,11 @@ export default function Contact() {
                 type="text"
                 className="cf-input"
                 placeholder="jan@firma.pl lub +48 000 000 000"
+                required
+                value={form.contact}
+                onChange={(e) =>
+                  setForm((f) => ({ ...f, contact: e.target.value }))
+                }
               />
             </div>
             <div className="cf-group">
@@ -78,6 +129,11 @@ export default function Contact() {
               <textarea
                 className="cf-textarea"
                 placeholder="Opisz krótko swój biznes i co chciałbyś osiągnąć dzięki nowej stronie..."
+                required
+                value={form.message}
+                onChange={(e) =>
+                  setForm((f) => ({ ...f, message: e.target.value }))
+                }
               />
             </div>
             <button
@@ -86,12 +142,25 @@ export default function Contact() {
               ref={btnRef}
               onMouseMove={onMove}
               onMouseLeave={onLeave}
+              disabled={status === "sending"}
             >
-              Wyślij wiadomość →
+              {status === "sending"
+                ? "Wysyłanie..."
+                : status === "sent"
+                  ? "Wysłano! ✓"
+                  : "Wyślij wiadomość →"}
             </button>
-            <p className="cf-note">
-              Bezpłatna wycena · Odpowiedź w 24h · Zero zobowiązań
-            </p>
+            {status === "error" && (
+              <p className="cf-note" style={{ color: "#ef4444" }}>
+                Nie udało się wysłać. Spróbuj ponownie lub napisz bezpośrednio
+                na maila.
+              </p>
+            )}
+            {status !== "error" && (
+              <p className="cf-note">
+                Bezpłatna wycena · Odpowiedź w 24h · Zero zobowiązań
+              </p>
+            )}
           </form>
         </RevealOnScroll>
       </div>
