@@ -483,7 +483,10 @@ section{padding:8rem 3rem;position:relative;z-index:1}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes avatarPulse{0%,100%{opacity:0;transform:scale(.9)}50%{opacity:.4;transform:scale(1.1)}}
 .about-card-name{font-weight:700;font-size:1.1rem;margin-bottom:.3rem}
-.about-card-role{font-size:.78rem;color:var(--muted)}
+.about-card-role{font-size:.78rem;color:var(--muted);margin-bottom:.9rem}
+.about-card-links{display:flex;gap:.75rem;justify-content:center;margin-top:.1rem}
+.about-card-link{font-size:.72rem;font-weight:600;letter-spacing:.04em;color:var(--rose);text-decoration:none;border:1px solid rgba(225,29,72,.25);padding:4px 12px;transition:background .2s,color .2s}
+.about-card-link:hover{background:var(--rose);color:#fff}
 .about-card-offset{position:absolute;top:20px;left:20px;right:-20px;bottom:-20px;background:linear-gradient(135deg,var(--rose),var(--rose-light));border-radius:0;z-index:1;opacity:.08;transition:all .4s}
 .about-visual:hover .about-card-offset{top:15px;left:15px;right:-25px;bottom:-25px;opacity:.14}
 

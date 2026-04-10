@@ -95,6 +95,10 @@ export default function About() {
             </div>
             <div className="about-card-name">Szymon &amp; Nikodem</div>
             <div className="about-card-role">Web Development Studio</div>
+            <div className="about-card-links">
+              <a href="https://simonlaskowsky.github.io/portfolio/" target="_blank" rel="noopener noreferrer" className="about-card-link">Szymon →</a>
+              <a href="https://www.nicodem.xyz/" target="_blank" rel="noopener noreferrer" className="about-card-link">Nikodem →</a>
+            </div>
           </div>
         </div>
       </RevealOnScroll>

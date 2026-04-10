@@ -6,8 +6,6 @@ import RevealOnScroll from "./ui/RevealOnScroll";
 export default function Contact() {
   const btnRef = useRef<HTMLButtonElement | null>(null);
   const [form, setForm] = useState({
-    name: "",
-    company: "",
     contact: "",
     message: "",
   });
@@ -44,7 +42,7 @@ export default function Contact() {
       if (!res.ok) throw new Error();
 
       setStatus("sent");
-      setForm({ name: "", company: "", contact: "", message: "" });
+      setForm({ contact: "", message: "" });
     } catch {
       setStatus("error");
     }
@@ -66,14 +64,14 @@ export default function Contact() {
             Opisz krótko czego potrzebujesz, a odezwiemy się w ciągu 24 godzin z
             bezpłatną wyceną. Bez zobowiązań.
           </p>
-          <a href="https://wa.me/48731531571" className="contact-option">
+          <a href="https://wa.me/48731531571" className="contact-option" target="_blank" rel="noopener noreferrer">
             <div className="co-icon wa">💬</div>
             <div>
               <div className="co-label">WhatsApp / Telefon</div>
               <div className="co-value">+48 731 531 571</div>
             </div>
           </a>
-          <a href="mailto:nikodem@sandnstudio.art" className="contact-option">
+          <a href={`https://mail.google.com/mail/?view=cm&to=nikodem@sandnstudio.art&su=${encodeURIComponent("Zapytanie o stronę")}&body=${encodeURIComponent("Dzień dobry,\n\nJestem zainteresowany/a współpracą.\n\nPozdrawiam")}`} className="contact-option" target="_blank" rel="noopener noreferrer">
             <div className="co-icon em">✉️</div>
             <div>
               <div className="co-label">E-mail</div>
@@ -84,33 +82,6 @@ export default function Contact() {
         <RevealOnScroll className="contact-form-wrap" delay={3}>
           <div className="cf-title">Wyślij wiadomość</div>
           <form onSubmit={handleSubmit}>
-            <div className="cf-row">
-              <div className="cf-group">
-                <label className="cf-label">Imię i nazwisko</label>
-                <input
-                  type="text"
-                  className="cf-input"
-                  placeholder="Jan Kowalski"
-                  required
-                  value={form.name}
-                  onChange={(e) =>
-                    setForm((f) => ({ ...f, name: e.target.value }))
-                  }
-                />
-              </div>
-              <div className="cf-group">
-                <label className="cf-label">Firma</label>
-                <input
-                  type="text"
-                  className="cf-input"
-                  placeholder="Nazwa firmy"
-                  value={form.company}
-                  onChange={(e) =>
-                    setForm((f) => ({ ...f, company: e.target.value }))
-                  }
-                />
-              </div>
-            </div>
             <div className="cf-group">
               <label className="cf-label">E-mail lub telefon</label>
               <input

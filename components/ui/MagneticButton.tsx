@@ -5,6 +5,8 @@ import { useCallback, useRef, MouseEvent, ReactNode, ElementType, createElement 
 type Props = {
   as?: ElementType;
   href?: string;
+  target?: string;
+  rel?: string;
   className?: string;
   children: ReactNode;
   onClick?: () => void;
@@ -14,6 +16,8 @@ type Props = {
 export default function MagneticButton({
   as: Tag = "a",
   href,
+  target,
+  rel,
   className = "btn-magnetic",
   children,
   onClick,
@@ -49,7 +53,7 @@ export default function MagneticButton({
     onMouseLeave: handleLeave,
     onClick,
   };
-  if (Tag === "a") props.href = href;
+  if (Tag === "a") { props.href = href; props.target = target; props.rel = rel; }
   if (Tag === "button") props.type = type || "button";
 
   return createElement(Tag, props, children);

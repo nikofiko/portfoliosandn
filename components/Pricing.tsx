@@ -4,6 +4,14 @@ import RevealOnScroll from "./ui/RevealOnScroll";
 import MagneticButton from "./ui/MagneticButton";
 import Counter from "./ui/Counter";
 
+const gmailLink = (planName: string, price: string) => {
+  const su = encodeURIComponent(`Zapytanie: ${planName} (${price})`);
+  const body = encodeURIComponent(
+    `Dzień dobry,\n\nJestem zainteresowany/a pakietem „${planName}" (${price}).\n\nPozdrawiam`
+  );
+  return `https://mail.google.com/mail/?view=cm&to=nikodem@sandnstudio.art&su=${su}&body=${body}`;
+};
+
 const plans = [
   {
     tag: "Starter",
@@ -21,6 +29,7 @@ const plans = [
     ],
     payment: "375 zł na start · 375 zł po oddaniu",
     popular: false,
+    href: gmailLink("Landing Page", "750 zł"),
   },
   {
     tag: "Najpopularniejszy",
@@ -39,6 +48,7 @@ const plans = [
     ],
     payment: "625 zł na start · 625 zł po oddaniu",
     popular: true,
+    href: gmailLink("Strona Wizytówka", "1250 zł"),
   },
   {
     tag: "Pro",
@@ -56,6 +66,7 @@ const plans = [
     ],
     payment: "1000 zł na start · 1000 zł po oddaniu",
     popular: false,
+    href: gmailLink("System Rezerwacji", "2000 zł"),
   },
   {
     tag: "Subskrypcja",
@@ -73,6 +84,7 @@ const plans = [
     ],
     payment: "Płatność co miesiąc · Anuluj kiedy chcesz",
     popular: false,
+    href: gmailLink("Pakiet Opieki", "75 zł/mies."),
   },
 ];
 
@@ -112,7 +124,7 @@ export default function Pricing() {
               ))}
             </ul>
             <div className="p-card-footer">
-              <MagneticButton href="#contact">
+              <MagneticButton href={plan.href} target="_blank" rel="noopener noreferrer">
                 Zamów <span className="btn-arrow">→</span>
               </MagneticButton>
               <p className="p-card-payment">{plan.payment}</p>

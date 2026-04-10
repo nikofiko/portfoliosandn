@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { name, company, contact, message } = await req.json();
+    const { contact, message } = await req.json();
 
-    if (!name || !contact || !message) {
+    if (!contact || !message) {
       return NextResponse.json(
         { error: "Wypełnij wszystkie wymagane pola." },
         { status: 400 }
@@ -16,12 +16,10 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "Formularz kontaktowy <onboarding@resend.dev>",
       to: "nikodem@sandnstudio.art",
-      subject: `Nowa wiadomość od ${name}`,
+      subject: `Nowa wiadomość z formularza kontaktowego`,
       replyTo: contact.includes("@") ? contact : undefined,
       html: `
         <h2>Nowa wiadomość z formularza kontaktowego</h2>
-        <p><strong>Imię i nazwisko:</strong> ${name}</p>
-        <p><strong>Firma:</strong> ${company || "Nie podano"}</p>
         <p><strong>Kontakt:</strong> ${contact}</p>
         <hr />
         <p><strong>Wiadomość:</strong></p>

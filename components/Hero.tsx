@@ -73,7 +73,7 @@ export default function Hero() {
         <div className="hero-grid">
           <div className="hero-tile" onMouseMove={onTileMove}>
             <div className="hero-tile-num">
-              <Counter target={15} suffix="+" />
+              <Counter target={12} suffix="+" />
             </div>
             <div className="hero-tile-label">Projektów</div>
           </div>
