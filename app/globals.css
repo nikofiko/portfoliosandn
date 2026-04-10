@@ -467,6 +467,7 @@ section{padding:8rem 3rem;position:relative;z-index:1}
 .about-section::before{content:'';position:absolute;bottom:-100px;right:20%;width:400px;height:400px;background:radial-gradient(circle,var(--rose-glow) 0%,transparent 70%);pointer-events:none;filter:blur(50px)}
 .about-section .tag{color:var(--rose)}.about-section .tag::before{border-color:var(--rose)}
 .about-section .big-title em{color:var(--rose)}
+.about-text .big-title{margin-bottom:1.5rem}
 .about-text p{color:#555;line-height:1.85;font-size:1.02rem;margin-bottom:1.5rem}
 .about-text strong{color:var(--fg);font-weight:600}
 .about-sig{display:flex;align-items:center;gap:1rem;margin-top:2rem}
